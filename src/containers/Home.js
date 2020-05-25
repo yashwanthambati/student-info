@@ -4,10 +4,6 @@ import { Container, Row, Col } from "reactstrap";
 //import DataTable from "../components/DataTable";
 import Form from "../components/Form";
 class Home extends Component {
-  state = {
-    items: [],
-  };
-
   render() {
     return (
       <div className="Home">
