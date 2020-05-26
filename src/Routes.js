@@ -5,24 +5,26 @@ import NotFound from "./containers/Notfound";
 import Login from "./containers/Login";
 import Signup from "./containers/Signup";
 import Data from "./containers/Data";
+import AuthenticatedRoute from "./components/AuthenticatedRoute";
+import UnauthenticatedRoute from "./components/UnauthenticatedRoute";
 
 export default function Routes() {
   return (
     <Switch>
-      <Route exact path="/">
+      <AuthenticatedRoute exact path="/">
         <Home />
-      </Route>
-      <Route exact path="/signup">
+      </AuthenticatedRoute>
+      <UnauthenticatedRoute exact path="/signup">
         <Signup />
-      </Route>
+      </UnauthenticatedRoute>
       {/* Finally, catch all unmatched routes */}
 
-      <Route exact path="/login">
+      <UnauthenticatedRoute exact path="/login">
         <Login />
-      </Route>
-      <Route exact path="/data">
+      </UnauthenticatedRoute>
+      <AuthenticatedRoute exact path="/data">
         <Data />
-      </Route>
+      </AuthenticatedRoute>
       <Route>
         <NotFound />
       </Route>
